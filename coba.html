@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>YOI</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@400;500&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+        <link rel="icon" type="image/png" href="logo.png">
+        <link href="https://cdn.jsdelivr.npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+        <script src="https://cdn.tailwindcss.com"></script>
+        
+        <style>
+          body {
+            font-family: 'Poppins', sans-serif;
+          }
+          .text-outline {
+            text-shadow: -2px -2px 0 #fff, 
+                         2px -2px 0 #fff, 
+                         -2px 2px 0 #fff, 
+                         2px 2px 0 #fff;
+          }
+          .text-outline-sm {
+            text-shadow: -1px -1px 0 #fff, 
+                         1px -1px 0 #fff, 
+                         -1px 1px 0 #fff, 
+                         1px 1px 0 #fff;
+          }
+        </style>
+    </head>
+    <body class="flex flex-col min-h-screen">
+
+        <nav class="bg-gray-900 text-white p-4" style="background-color: #313131;">
+          <div class="container mx-auto flex justify-between items-center">
+            <div class="text-3xl font-bold tracking-wider">YOI</div>
+            
+            <div class="flex space-x-8"> 
+              <a href="#" class="text-sm uppercase font-semibold tracking-wider border-b-2 border-white pb-1">HOME</a>
+              <a href="#" class="text-sm uppercase font-semibold tracking-wider hover:text-gray-300 transition-colors">ABOUT</a>
+              <a href="#" class="text-sm uppercase font-semibold tracking-wider hover:text-gray-300 transition-colors">SERVICES</a>
+              <a href="#" class="text-sm uppercase font-semibold tracking-wider hover:text-gray-300 transition-colors">EVENTS</a>
+              <a href="#" class="text-sm uppercase font-semibold tracking-wider hover:text-gray-300 transition-colors">LOGIN</a>
+            </div>
+          </div>
+        </nav>
+
+        <header class="relative h-[85vh] bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?fit=crop&w=1920&h=1080&q=80');">
+          
+          <div class="absolute inset-0 bg-cyan-600 opacity-40"></div>
+          
+          <div class="relative z-10 flex flex-col items-center justify-center h-full text-center text-black">
+            
+            <h1 class="text-8xl font-bold uppercase text-outline">
+              Young.Open-Minded.Innovative
+            </h1>
+            
+            <p class="text-4xl font-semibold uppercase mt-4 text-outline-sm">
+              A Sustainability Community
+            </p>
+            
+            <a href="#" class="mt-8 bg-gray-900 text-white text-lg font-semibold py-3 px-10 rounded-full uppercase hover:bg-gray-700 transition duration-300" style="background-color: #313131;">
+              View Our Services
+            </a>
+          </div>
+        </header>
+
+        <footer class="bg-gray-900 text-white p-6 mt-auto" style="background-color: #313131;">
+          <div class="container mx-auto text-center">
+            <p class="text-sm">&copy; 2025 YOI. All rights reserved.</p>
+          </div>
+        </footer>
+    </body>
+</html>
