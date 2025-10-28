@@ -14,21 +14,17 @@
         
         <style>
           body {
-            /* Body Text: Open Sans Regular */
             font-family: 'Open Sans', sans-serif;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
-            /* Warna Teks Default: Hitam Tinta */
-            color: #212121; /* Ink Black */
+            color: #212121; 
           }
           
-          /* Judul dan Heading: Poppins Bold */
           .font-title {
             font-family: 'Poppins', sans-serif;
             font-weight: 700;
           }
 
-          /* Subheading: Roboto Medium */
           .font-subheading {
             font-family: 'Roboto', sans-serif;
             font-weight: 500;
@@ -44,7 +40,6 @@
 
           .bg-primary-yellow { background-color: #FFD333; }
           .text-primary-yellow { color: #FFD333; }
-          /* Kuning lebih gelap untuk teks/kontras */
           .text-primary-yellow-dark { color: #FFB81C; } 
 
           /* Warna Sekunder */
@@ -54,30 +49,30 @@
           
           /* Navigasi */
           .nav-link {
-            font-family: 'Roboto', sans-serif; /* Subheading font */
+            font-family: 'Roboto', sans-serif; 
             font-weight: 500;
-            color: #4F4F4F; /* Abu-abu/Hitam muda */
+            color: #4F4F4F; 
             transition: color 0.3s ease;
           }
           .nav-link:hover {
-            color: #32A852; /* Hijau Primary */
+            color: #32A852; 
           }
 
           .btn-nav-home {
             font-family: 'Roboto', sans-serif;
             font-weight: 500;
-            background-color: #32A852; /* Hijau Primary */
+            background-color: #32A852; 
             color: white;
             transition: background-color 0.3s ease;
           }
           .btn-nav-home:hover {
-            background-color: #2B8C4E; /* Hijau Primary (Darker) */
+            background-color: #2B8C4E; 
           }
 
           .btn-nav-login {
             font-family: 'Roboto', sans-serif;
             font-weight: 500;
-            color: #32A852; /* Hijau Primary */
+            color: #32A852;
             border-color: #32A852;
             transition: background-color 0.3s ease, color 0.3s ease;
           }
@@ -90,37 +85,36 @@
           .btn-hero-primary {
             font-family: 'Roboto', sans-serif;
             font-weight: 500;
-            background-color: #32A852; /* Hijau Primary */
+            background-color: #32A852; 
             color: white;
             transition: background-color 0.3s ease;
           }
           .btn-hero-primary:hover {
-            background-color: #2B8C4E; /* Hijau Primary (Darker) */
+            background-color: #2B8C4E; 
           }
           .btn-hero-secondary {
             font-family: 'Roboto', sans-serif;
             font-weight: 500;
             background-color: transparent;
             color: white; 
-            border: 1px solid white; /* Tambah border putih */
-            /* --- Transisi (ditambah color dan border-color) --- */
+            border: 1px solid white; 
             transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
           }
           .btn-hero-secondary:hover {
-            background-color: white; /* Latar jadi putih */
-            color: #212121; /* Teks jadi Ink Black */
-            border-color: white; /* Border tetap putih */
+            background-color: white; 
+            color: #212121; 
+            border-color: white; 
           }
           .btn-join {
             font-family: 'Roboto', sans-serif;
             font-weight: 500;
             background-color: white;
-            color: #212121; /* Ink Black */
+            color: #212121; 
             border: 1px solid white;
             transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
           }
           .btn-join:hover {
-            background-color: #f0f0f0; /* Sedikit lebih gelap */
+            background-color: #f0f0f0; 
             color: #212121;
             transform: scale(1.05);
           }
@@ -129,7 +123,6 @@
             background-image: linear-gradient(to right, #32A852 25%, #3B82F6 50%, #FFD333 75%);
           }
           
-          /* 4. Sisanya (Akordeon) */
           .accordion-content {
             max-height: 0;
             overflow: hidden;
@@ -142,22 +135,16 @@
             transform: rotate(180deg);
           }
 
-          /* 5. Efek Teks Gradasi (Baru) */
           .text-gradient-heading {
-            /* 1. Definisikan gradasi sebagai background */
-            /* Sesuai Guideline: Hijau -> Biru -> Kuning */
-            /* Di-adjust agar hijau & kuning lebih terlihat */
+            /* Definisikan gradasi sebagai background */
+            
             background-image: linear-gradient(to right, #32A852 25%, #3B82F6 50%, #FFD333 75%);
             
-            /* 2. Gunakan text-fill-color (WebKit) untuk kompatibilitas */
+            /* untuk kompatibilitas */
             -webkit-text-fill-color: transparent;
             
-            /* 3. Gunakan background-clip: text */
             -webkit-background-clip: text;
             background-clip: text;
-            
-            /* 4. Pastikan inline-block agar gradasi pas */
-            /* (Opsional, tapi 'block' sudah ada di HTML) */
           }
         </style>
     </head>
@@ -165,7 +152,6 @@
 
         <nav class="bg-white p-4 shadow-sm sticky top-0 z-50 w-full">
           <div class="container mx-auto flex justify-between items-center">
-            <!-- <div class="text-3xl font-bold tracking-wider">YOI</div> -->
             <a href="#" aria-label="Homepage">
               <img src="logoB1.png" alt="YOI Logo" class="h-10 w-auto">
             </a>
@@ -173,7 +159,6 @@
             <!-- Menu Navigasi -->
             <div class="flex items-center space-x-6"> 
               <a href="#" class="text-sm py-2 px-5 rounded-full btn-nav-home">Home</a>
-              <!-- Link 'About' ini nanti bisa diganti ke about.html -->
               <a href="#about" class="text-sm nav-link">About</a>
               <a href="#services" class="text-sm nav-link">Services</a>
               <a href="#events" class="text-sm nav-link">Events</a>
@@ -182,31 +167,23 @@
           </div>
         </nav>
 
-        <!-- 2. Bagian Header/Hero Baru (Sesuai image_898c2b.jpg) -->
         <header class="relative h-[90vh] bg-cover bg-center" style="background-image: url('city.jpeg');">
           <!-- Overlay gelap -->
           <div class="absolute inset-0 bg-black opacity-50"></div>
           
-          <!-- Konten Teks di Header -->
           <div class="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-4">
-            
-            <!-- Judul Utama (Poppins Bold) -->
             <h1 class="text-4xl sm:text-5xl md:text-7xl font-title">
               YOI: A Sustainability
-              <!-- Teks warna-warni (Sesuai Guideline) -->
               <span class="block text-gradient-heading">
                 Community
               </span>
             </h1>
             
-            <!-- Sub-judul (Roboto Medium) -->
             <p class="text-lg md:text-2xl mt-6 max-w-3xl font-subheading">
               Memotivasi generasi muda untuk menjadi Agen Perubahan dan mendukung keberlanjutan untuk mewujudkan Indonesia Emas 2045.
             </p>
             
-            <!-- Tombol Call-to-Action -->
             <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 mt-10">
-              <!-- Tombol hijau ke #about (sesuai permintaan) -->
               <a href="#about" class="text-lg py-3 px-8 rounded-full flex items-center justify-center space-x-2 btn-hero-primary">
                 <span>Pelajari Lebih Lanjut</span>
                 <span>&rarr;</span>
@@ -218,15 +195,12 @@
           </div>
         </header>
 
-        <!-- Wrapper untuk konten utama -->
         <main class="flex-grow">
         
-          <!-- 3. Bagian Tiga Pilar (Sesuai image_898cc6.jpg) -->
+          <!-- bagian 3 pilar -->
           <section id="services" class="py-16 sm:py-24 bg-white">
             <div class="container mx-auto px-4 text-center">
-              <!-- Judul (Poppins Bold) -->
               <h2 class="text-4xl md:text-5xl mb-4 font-title text-secondary-black">Tiga Pilar Kami</h2>
-              <!-- Sub-judul (Roboto Medium) -->
               <p class="text-lg md:text-xl max-w-2xl mx-auto mb-12 font-subheading text-secondary-black-light">
                 Keseimbangan sempurna antara alam, masyarakat, dan teknologi untuk masa depan yang lebih baik.
               </p>
@@ -235,9 +209,7 @@
                 <div class="bg-white rounded-lg shadow-lg overflow-hidden border border-gray-100 transform transition duration-300 hover:shadow-xl hover:-translate-y-1">
                   <img src="nature.jpg" alt="[Gambar alam dengan kincir angin]" class="w-full h-48 object-cover">
                   <div class="p-6 text-left">
-                    <!-- Judul Card (Poppins Bold) dengan warna Hijau (Nature) -->
                     <h3 class="text-2xl mb-2 font-title text-primary-green">Nature</h3>
-                    <!-- Body Text Card (Open Sans) -->
                     <p class="text-secondary-black-light">Keberlanjutan alam melalui konservasi dan inovasi hijau.</p>
                   </div>
                 </div>
@@ -245,9 +217,7 @@
                 <div class="bg-white rounded-lg shadow-lg overflow-hidden border border-gray-100 transform transition duration-300 hover:shadow-xl hover:-translate-y-1">
                   <img src="society.jpg" alt="[Sekelompok orang belajar bersama]" class="w-full h-48 object-cover">
                   <div class="p-6 text-left">
-                    <!-- Judul Card (Poppins Bold) dengan warna Kuning (Society) -->
                     <h3 class="text-2xl mb-2 font-title text-primary-yellow-dark">Society</h3>
-                    <!-- Body Text Card (Open Sans) -->
                     <p class="text-secondary-black-light">Membangun masyarakat yang inklusif dan berdaya.</p>
                   </div>
                 </div>
@@ -255,9 +225,7 @@
                 <div class="bg-white rounded-lg shadow-lg overflow-hidden border border-gray-100 transform transition duration-300 hover:shadow-xl hover:-translate-y-1">
                   <img src="technology.jpg" alt="[Papan sirkuit teknologi]" class="w-full h-48 object-cover">
                   <div class="p-6 text-left">
-                    <!-- Judul Card (Poppins Bold) dengan warna Biru (Technology) -->
                     <h3 class="text-2xl mb-2 font-title text-primary-blue">Technology</h3>
-                    <!-- Body Text Card (Open Sans) -->
                     <p class="text-secondary-black-light">Teknologi untuk solusi berkelanjutan masa depan.</p>
                   </div>
                 </div>
@@ -265,25 +233,20 @@
             </div>
           </section>
 
-          <!-- 4. Bagian Q&A (Sesuai image_89e2e1.png) -->
-          <!-- Latar belakang Abu-Abu Netral -->
+          <!-- Bagian Q&A -->
           <section id="qna" class="py-16 sm:py-24 bg-secondary-gray">
             <div class="container mx-auto px-4 max-w-3xl">
-              <!-- Judul (Poppins Bold) -->
               <h2 class="text-4xl md:text-5xl text-center mb-12 font-title text-secondary-black">Q&A</h2>
               <div class="space-y-4">
                 <!-- Q&A Item 1 -->
                 <div class="bg-white border border-gray-200 rounded-lg shadow-sm overflow-hidden">
                   <h2>
-                    <!-- Pertanyaan (Roboto Medium) -->
                     <button type="button" class="accordion-button flex items-center justify-between w-full p-6 text-left text-lg hover:bg-gray-50 font-subheading text-secondary-black" aria-expanded="false">
                       <span>Apa itu YOI Community?</span>
-                      <!-- Ikon Panah SVG -->
                       <svg class="w-6 h-6 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                     </button>
                   </h2>
                   <div class="accordion-content">
-                    <!-- Jawaban (Open Sans) -->
                     <div class="p-6 pt-0 text-secondary-black-light">
                       <p>YOI Community adalah komunitas sustainability yang berfokus pada keseimbangan antara Nature (Alam), Society (Masyarakat), dan Technology (Teknologi). Kami berkomitmen untuk menciptakan masa depan yang berkelanjutan melalui edukasi, inovasi, dan aksi kolaboratif.</p>
                     </div>
@@ -292,14 +255,12 @@
                 <!-- Q&A Item 2 -->
                 <div class="bg-white border border-gray-200 rounded-lg shadow-sm overflow-hidden">
                   <h2>
-                    <!-- Pertanyaan (Roboto Medium) -->
                     <button type="button" class="accordion-button flex items-center justify-between w-full p-6 text-left text-lg hover:bg-gray-50 font-subheading text-secondary-black" aria-expanded="false">
                       <span>Bagaimana cara bergabung dengan YOI Community?</span>
                       <svg class="w-6 h-6 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                     </button>
                   </h2>
                   <div class="accordion-content">
-                    <!-- Jawaban (Open Sans) -->
                     <div class="p-6 pt-0 text-secondary-black-light">
                       <p>Kamu bisa mendaftar melalui tombol "Daftar Sekarang" di bawah ini dan mengisi formulir yang tersedia. Setelah itu, tim kami akan menghubungimu untuk proses selanjutnya.</p>
                     </div>
@@ -308,14 +269,12 @@
                 <!-- Q&A Item 3 -->
                 <div class="bg-white border border-gray-200 rounded-lg shadow-sm overflow-hidden">
                   <h2>
-                    <!-- Pertanyaan (Roboto Medium) -->
                     <button type="button" class="accordion-button flex items-center justify-between w-full p-6 text-left text-lg hover:bg-gray-50 font-subheading text-secondary-black" aria-expanded="false">
                       <span>Apakah ada biaya keanggotaan?</span>
                       <svg class="w-6 h-6 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                     </button>
                   </h2>
                   <div class="accordion-content">
-                    <!-- Jawaban (Open Sans) -->
                     <div class="p-6 pt-0 text-secondary-black-light">
                       <p>Tidak ada biaya keanggotaan. YOI Community gratis dan terbuka untuk siapa saja yang memiliki semangat dan komitmen terhadap keberlanjutan.</p>
                     </div>
@@ -325,17 +284,13 @@
             </div>
           </section>
 
-          <!-- 5. Bagian Bergabung (Sesuai image_89de7f.jpg) -->
-          <!-- Latar belakang Gradient Hijau ke Biru -->
+          <!-- Bagian Bergabung -->
           <section id="join" class="py-16 sm:py-24 text-white bg-join-gradient">
             <div class="container mx-auto px-4 text-center">
-              <!-- Judul (Poppins Bold) -->
               <h2 class="text-4xl md:text-5xl mb-4 font-title">Bergabung dengan Kami</h2>
-              <!-- Sub-judul (Roboto Medium) -->
               <p class="text-lg md:text-xl max-w-2xl mx-auto mb-10 font-subheading">
                 Mari bersama-sama menciptakan perubahan positif untuk planet dan generasi mendatang.
               </p>
-              <!-- Tombol Putih (Style baru .btn-join) -->
               <a href="#" class="text-lg py-3 px-8 rounded-full flex items-center justify-center space-x-2 max-w-xs mx-auto btn-join">
                 <span>Daftar Sekarang</span>
                 <span>&rarr;</span>
@@ -345,28 +300,22 @@
         
         </main>
 
-        <!-- Latar belakang Ink Black (#212121) -->
         <footer class="p-10 md:p-16 mt-auto text-gray-300" style="background-color: #212121;">
           <div class="container mx-auto">
             <div class="flex flex-col md:flex-row justify-between gap-10">
               
               <!-- Kolom Kiri: Info YOI -->
               <div class="md:w-1/2 lg:w-2/5">
-                <!-- Logo (placeholder, sama kayak di navbar tapi versi putih) -->
-                <!-- Ganti URL ini dengan logo versi terang/putih kamu -->
                 <img src="logoW1.png" alt="YOI Logo" class="h-10 w-auto mb-4">
                 
-                <!-- Deskripsi (Open Sans) -->
                 <p class="mb-2 text-lg font-body-bold text-white">YOI: A Sustainability Community</p>
                 <p class="mb-2 italic text-gray-400">Young.Open-Minded.Innovative ✨</p>
                 <p class="mb-4 italic text-gray-400">“We learn together to create a sustainable future”</p>
-                <!-- Hashtag (Hijau Primary) -->
                 <p class="font-body-bold text-primary-green">#EmpowerFutureGeneration</p>
               </div>
 
               <!-- Kolom Kanan: Get in Touch -->
               <div class="md:w-1/2 lg:w-2/5">
-                <!-- Judul (Poppins) -->
                 <h3 class="font-title text-2xl text-white mb-4 uppercase">GET IN TOUCH!</h3>
                 <div class="space-y-3 font-subheading">
                   <!-- Instagram -->
@@ -403,10 +352,9 @@
               </div>
             </div>
             
-            <!-- Garis Pemisah -->
             <hr class="border-t border-gray-700 my-8">
 
-            <!-- Copyright (Open Sans) -->
+            <!-- Copyright -->
             <div class="text-center text-gray-400 text-sm">
               <p>&copy; 2025 YOI: A Sustainability Community. All rights reserved.</p>
             </div>
@@ -419,10 +367,6 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
         <script>
-          // Menjalankan skrip setelah DOM selesai dimuat
-          // Gege hapus 'DOMContentLoaded' wrapper-nya karena script ini sudah di akhir body
-          // document.addEventListener('DOMContentLoaded', () => {
-            
             // Ambil semua tombol akordeon
             document.querySelectorAll('.accordion-button').forEach(button => {
               // Tambahkan event listener 'click'
