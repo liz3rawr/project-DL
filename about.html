@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>About YOI</title>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Poppins:wght@700&family=Roboto:wght@500&display=swap" rel="stylesheet">
+        <link rel="icon" type="image/png" href="logoB1.png">
+        <script src="https://cdn.tailwindcss.com"></script>
+        
+        <style>
+          body {
+            font-family: 'Open Sans', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            color: #212121; 
+          }
+          .font-title { font-family: 'Poppins', sans-serif; font-weight: 700; }
+          .font-subheading { font-family: 'Roboto', sans-serif; font-weight: 500; }
+          .font-body-bold { font-family: 'Open Sans', sans-serif; font-weight: 700; }
+
+          .bg-primary-green { background-color: #32A852; }
+          .text-primary-green { color: #32A852; }
+          .border-primary-green { border-color: #32A852; }
+          .bg-primary-blue { background-color: #3B82F6; }
+          .text-primary-blue { color: #3B82F6; }
+          .bg-primary-yellow { background-color: #FFD333; }
+          .text-primary-yellow { color: #FFD333; }
+          .text-primary-yellow-dark { color: #FFB81C; } 
+          .bg-secondary-gray { background-color: #EAEAEA; }
+          .text-secondary-black { color: #212121; }
+          .text-secondary-black-light { color: #4F4F4F; }
+
+          .nav-link {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 500;
+            color: #4F4F4F;
+            transition: color 0.3s ease;
+          }
+          .nav-link:hover { color: #32A852; }
+          .btn-nav-home {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 500;
+            background-color: #32A852;
+            color: white;
+            transition: background-color 0.3s ease;
+          }
+          .btn-nav-home:hover { background-color: #2B8C4E; }
+          .btn-nav-login {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 500;
+            color: #32A852;
+            border-color: #32A852;
+            transition: background-color 0.3s ease, color 0.3s ease;
+          }
+          .btn-nav-login:hover { background-color: #32A852; color: white; }
+
+          .text-gradient-heading {
+            background-image: linear-gradient(to right, #32A852 25%, #3B82F6 50%, #FFD333 75%);
+            -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text;
+            background-clip: text;
+          }
+          
+          .gallery-slide {
+            flex: 0 0 100%; 
+            width: 100%;
+            user-select: none; 
+          }
+          .gallery-track-transition {
+            transition: transform 0.5s ease-in-out;
+          }
+        </style>
+    </head>
+    <body class="flex flex-col min-h-screen bg-white">
+
+        <!-- Navigasi -->
+        <nav class="bg-white p-4 shadow-sm sticky top-0 z-50 w-full">
+          <div class="container mx-auto flex justify-between items-center">
+            <a href="index.html" aria-label="Homepage">
+              <img src="logoB1.png" alt="YOI Logo" class="h-12 w-auto">
+            </a>
+            
+            <!-- Menu Navigasi -->
+            <div class="flex items-center space-x-6"> 
+              <a href="index.html" class="text-sm nav-link">Home</a>
+              <a href="about.html" class="text-sm py-2 px-5 rounded-full btn-nav-home">About</a>
+              
+              <a href="index.html#services" class="text-sm nav-link">Services</a>
+              <a href="index.html#events" class="text-sm nav-link">Events</a>
+              <a href="#" class="text-sm border py-2 px-5 rounded-full btn-nav-login">Login</a>
+            </div>
+          </div>
+        </nav>
+
+        <main class="flex-grow">
+        
+          <!-- "About YOI" -->
+          <section id="about" class="py-16 sm:py-24 bg-secondary-gray">
+            <div class="container mx-auto px-4">
+              <div class="grid grid-cols-1 md:grid-cols-5 gap-12 items-center max-w-6xl mx-auto">
+                
+                <div class="md:col-span-3">
+                  <h1 class="text-4xl md:text-5xl font-title text-secondary-black mb-8">
+                    <span class="text-gradient-heading">YOI</span>: A Sustainability Community
+                  </h1>
+                  
+                  <div class="space-y-4 text-lg text-secondary-black-light">
+                    <p>
+                      YOI: A Sustainability Community didirikan pada tahun 2020 dengan awal sebagai podcast inspiratif untuk pengembangan diri generasi muda. Berawal dari semangat berbagi pengetahuan dan motivasi, kami terus berkembang mengikuti kebutuhan zaman.
+                    </p>
+                    <p>
+                      Pada tahun 2023, kami melakukan transformasi besar dengan mengubah fokus inti menjadi nilai-nilai Keberlanjutan (Sustainability) yang mencakup tiga pilar utama: Nature, Society, dan Technology. Transformasi ini lahir dari kesadaran bahwa generasi muda membutuhkan platform yang tidak only inspiratif, tetapi juga berorientasi pada aksi nyata untuk masa depan berkelanjutan.
+                    </p>
+                    <p>
+                      Saat ini, YOI menjadi pusat informasi resmi untuk jadwal kegiatan, pendaftaran program, materi pembelajaran, dan arsip dokumentasi. Kami berkomitmen menyajikan platform yang profesional dan kredibel untuk mendukung generasi penerus bangsa mencapai visi Indonesia Emas 2045. Bergabunglah bersama kami sebagai Agen Perubahan!
+                    </p>
+                  </div>
+                </div>
+                
+                <div class="md:col-span-2">
+                  <img src="society.jpg" alt="Grup YOI Community sedang berdiskusi" class="rounded-lg shadow-xl w-full h-auto object-cover aspect-square md:aspect-auto">
+                </div>
+
+              </div>
+            </div>
+          </section>
+          
+          <!-- "Our Gallery" (Slider) -->
+          <section id="gallery" class="py-16 sm:py-24 bg-white">
+            <div class="container mx-auto px-4">
+              <h2 class="text-4xl md:text-5xl text-center mb-12 font-title text-secondary-black">Our Gallery</h2>
+              
+              <div id="gallery-container-about" class="relative max-w-4xl mx-auto overflow-hidden rounded-lg shadow-lg bg-gray-100 cursor-grab active:cursor-grabbing">
+                <div id="gallery-track-about" class="flex">
+                  <div class="gallery-slide">
+                    <img src="society.jpg" alt="Galeri Foto YOI 1" class="w-full h-auto object-cover aspect-video pointer-events-none">
+                  </div>
+                  <div class="gallery-slide">
+                    <img src="nature.jpg" alt="Galeri Foto YOI 2" class="w-full h-auto object-cover aspect-video pointer-events-none">
+                  </div>
+                  <div class="gallery-slide">
+                    <img src="city.jpeg" alt="Galeri Foto YOI 3" class="w-full h-auto object-cover aspect-video pointer-events-none">
+                  </div>
+                  <div class="gallery-slide">
+                    <img src="technology.jpg" alt="Galeri Foto YOI 4" class="w-full h-auto object-cover aspect-video pointer-events-none">
+                  </div>
+                </div>
+                
+                <button id="gallery-prev-about" class="absolute top-1/2 left-4 -translate-y-1/2 bg-white/80 p-2 rounded-full shadow-md hover:bg-white transition text-secondary-black z-10" aria-label="Previous Slide">
+                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                </button>
+                
+                <button id="gallery-next-about" class="absolute top-1/2 right-4 -translate-y-1/2 bg-white/80 p-2 rounded-full shadow-md hover:bg-white transition text-secondary-black z-10" aria-label="Next Slide">
+                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                </button>
+              </div>
+            </div>
+          </section>
+        
+        </main>
+
+        <footer class="p-10 md:p-16 mt-auto text-gray-300" style="background-color: #212121;">
+          <div class="container mx-auto">
+            <div class="flex flex-col md:flex-row justify-between gap-10">
+              
+              <!-- Kolom Kiri: Info YOI -->
+              <div class="md:w-1/2 lg:w-2/5">
+                <img src="logoW1.png" alt="YOI Logo" class="h-10 w-auto mb-4">
+                
+                <p class="mb-2 text-lg font-body-bold text-white">YOI: A Sustainability Community</p>
+                <p class="mb-2 italic text-gray-400">Young.Open-Minded.Innovative ✨</p>
+                <p class="mb-4 italic text-gray-400">“We learn together to create a sustainable future”</p>
+                <p class="font-body-bold text-primary-green">#EmpowerFutureGeneration</p>
+              </div>
+
+              <!-- Kolom Kanan: Get in Touch -->
+              <div class="md:w-1/2 lg:w-2/5">
+                <h3 class="font-title text-2xl text-white mb-4 uppercase">GET IN TOUCH!</h3>
+                <div class="space-y-3 font-subheading">
+                  <!-- Instagram -->
+                  <a href="#" class="flex items-center space-x-3 group">
+                    <!-- Ikon IG -->
+                    <img src="ig.png" alt="Ikon Instagram" class="w-6 h-6">
+                    <span class="group-hover:text-white transition-colors">namaIG</span>
+                  </a>
+                  <!-- TikTok -->
+                  <a href="#" class="flex items-center space-x-3 group">
+                    <!-- Ikon TikTok -->
+                    <img src="tiktok.png" alt="Ikon TikTok" class="w-6 h-6">
+                    <span class="group-hover:text-white transition-colors">namaTT</span>
+                  </a>
+                  <!-- WhatsApp -->
+                  <a href="#" class="flex items-center space-x-3 group">
+                    <!-- Ikon WA -->
+                    <img src="wa.png" alt="Ikon WA" class="w-6 h-6">
+                    <span class="group-hover:text-white transition-colors">noWA</span>
+                  </a>
+                  <!-- YouTube -->
+                  <a href="#" class="flex items-center space-x-3 group">
+                    <!-- Ikon YT -->
+                    <img src="yutub.png" alt="Ikon YT" class="w-6 h-6">
+                    <span class="group-hover:text-white transition-colors">namaChannel</span>
+                  </a>
+                  <!-- Email -->
+                  <a href="#" class="flex items-center space-x-3 group">
+                    <!-- Ikon Email -->
+                    <img src="email.png" alt="Ikon Email" class="w-6 h-6">
+                    <span class="group-hover:text-white transition-colors">namaEmail</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+            
+            <hr class="border-t border-gray-700 my-8">
+
+            <!-- Copyright -->
+            <div class="text-center text-gray-400 text-sm">
+              <p>&copy; 2025 YOI: A Sustainability Community. All rights reserved.</p>
+            </div>
+          </div>
+        </footer>
+
+        <!-- untuk Slider Galeri -->
+        <script>
+          document.addEventListener('DOMContentLoaded', () => {
+            
+            const galleryContainer = document.getElementById('gallery-container-about');
+            const track = document.getElementById('gallery-track-about'); 
+            const nextButton = document.getElementById('gallery-next-about');
+            const prevButton = document.getElementById('gallery-prev-about');
+            
+            if (track && nextButton && prevButton && galleryContainer) {
+              let slides = Array.from(track.children);
+              const slideCount = slides.length;
+              if (slideCount === 0) return; // Keluar jika tidak ada slide
+              
+              // 1. Kloning slide pertama dan terakhir
+              const firstClone = slides[0].cloneNode(true);
+              firstClone.id = 'first-clone';
+              const lastClone = slides[slideCount - 1].cloneNode(true);
+              lastClone.id = 'last-clone';
+              
+              track.appendChild(firstClone);
+              track.prepend(lastClone);
+              
+              let allSlides = Array.from(track.children);
+              
+              let currentIndex = 1; // Mulai dari slide '1' (ASLI)
+              let isTransitioning = false;
+              
+              // 2. Set Posisi Awal (tanpa animasi)
+              track.style.transform = `translateX(-${currentIndex * 100}%)`;
+              
+              // Fungsi untuk menggeser slide
+              const shiftSlides = () => {
+                if (isTransitioning) return; // Jangan geser jika sedang transisi
+                isTransitioning = true; // Mulai transisi
+                track.classList.add('gallery-track-transition'); // Nyalakan animasi
+                track.style.transform = `translateX(-${currentIndex * 100}%)`;
+              };
+
+              // Fungsi untuk 'melompat' (reset) setelah animasi selesai
+              const handleJump = () => {
+                if (allSlides[currentIndex].id === 'first-clone') {
+                  track.classList.remove('gallery-track-transition');
+                  currentIndex = 1;
+                  track.style.transform = `translateX(-${currentIndex * 100}%)`;
+                } else if (allSlides[currentIndex].id === 'last-clone') {
+                  track.classList.remove('gallery-track-transition');
+                  currentIndex = allSlides.length - 2;
+                  track.style.transform = `translateX(-${currentIndex * 100}%)`;
+                }
+              };
+              
+              // 3. Event Listener untuk Tombol
+              nextButton.addEventListener('click', () => {
+                if (isTransitioning) return;
+                currentIndex++;
+                shiftSlides();
+              });
+              
+              prevButton.addEventListener('click', () => {
+                if (isTransitioning) return;
+                currentIndex--;
+                shiftSlides();
+              });
+              
+              // 4. Listener untuk 'Jump' (setelah animasi selesai)
+              // dan untuk 'membuka kunci' transisi
+              track.addEventListener('transitionend', () => {
+                handleJump();
+                isTransitioning = false; // Buka kunci setelah animasi selesai
+              });
+              
+              // 5. Tambahkan Event Listener untuk Touch (Swipe) & Mouse (Drag)
+              let isDragging = false;
+              let dragStart = 0;
+              let currentTranslate = 0;
+              let dragOffset = 0;
+              let slideWidth = 0;
+              
+              // Fungsi untuk memulai 'drag'
+              const startDrag = (e) => {
+                if (isTransitioning) return;
+                isDragging = true;
+                dragStart = e.type.includes('touch') ? e.touches[0].clientX : e.clientX;
+                track.classList.remove('gallery-track-transition');
+                // Hitung posisi translate saat ini berdasarkan index
+                slideWidth = slides[0].offsetWidth; 
+                currentTranslate = -currentIndex * slideWidth;
+              };
+              
+              // Fungsi untuk 'dragging'
+              const dragging = (e) => {
+                if (!isDragging) return;
+                const currentX = e.type.includes('touch') ? e.touches[0].clientX : e.clientX;
+                dragOffset = currentX - dragStart;
+                track.style.transform = `translateX(${currentTranslate + dragOffset}px)`;
+              };
+              
+              // Fungsi untuk 'melepas'
+              const endDrag = (e) => {
+                if (!isDragging) return;
+                isDragging = false;
+                
+                // --- INI PERBAIKANNYA ---
+                // Jika tidak ada pergeseran (cuma klik), jangan lakukan apa-apa
+                // Biarkan event klik tombol yang bekerja.
+                if (dragOffset === 0) {
+                  return; 
+                }
+                // -------------------------
+
+                // Cek threshold (50px atau 1/4 lebar slide)
+                const threshold = slideWidth / 6; // Dibuat lebih sensitif
+                
+                if (Math.abs(dragOffset) > threshold) {
+                  if (dragOffset < 0) {
+                    // Geser ke kiri (Next)
+                    currentIndex++;
+                  } else {
+                    // Geser ke kanan (Prev)
+                    currentIndex--;
+                  }
+                }
+                
+                // Kembalikan animasi dan geser ke posisi index yang benar
+                shiftSlides(); // Panggil fungsi ini
+                
+                dragOffset = 0;
+              };
+
+              // Pasang listener-nya ke CONTAINER, bukan track
+              galleryContainer.addEventListener('mousedown', startDrag);
+              galleryContainer.addEventListener('mousemove', dragging);
+              galleryContainer.addEventListener('mouseup', endDrag);
+              galleryContainer.addEventListener('mouseleave', endDrag);
+              
+              galleryContainer.addEventListener('touchstart', startDrag, { passive: true });
+              galleryContainer.addEventListener('touchmove', dragging, { passive: true });
+              galleryContainer.addEventListener('touchend', endDrag);
+
+              // Update lebar slide jika window di-resize
+              window.addEventListener('resize', () => {
+                slideWidth = slides[0].offsetWidth;
+                track.classList.remove('gallery-track-transition');
+                currentTranslate = -currentIndex * slideWidth;
+                track.style.transform = `translateX(${currentTranslate}px)`;
+              });
+
+            } else {
+              console.error('Elemen slider galeri di about.html tidak ditemukan.');
+            }
+          });
+        </script>
+    </body>
+</html>
+
