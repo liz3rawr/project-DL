@@ -66,13 +66,41 @@
             background-clip: text;
           }
           
-          .gallery-slide {
-            flex: 0 0 100%; 
-            width: 100%;
-            user-select: none; 
+          #gallery-container-about {
+            /* Hapus perspective, sudah tidak 3D */
+            position: relative;
           }
-          .gallery-track-transition {
-            transition: transform 0.5s ease-in-out;
+          
+          #gallery-track-about {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            /* Hapus transform-style, sudah tidak 3D */
+            cursor: grab;
+          }
+          #gallery-track-about:active {
+            cursor: grabbing;
+          }
+
+          .gallery-slide {
+            position: absolute;
+            top: 10%;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            width: 60%; /* Lebar kartu 60% */
+            height: 80%; /* Tinggi kartu 80% */
+            user-select: none;
+            border-radius: 0.75rem;
+            overflow: hidden;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+          }
+          
+          .gallery-slide img {
+            pointer-events: none;
+            width: 100%;
+            height: 100%;
+            object-cover;
           }
         </style>
     </head>
@@ -138,16 +166,16 @@
               <div id="gallery-container-about" class="relative max-w-4xl mx-auto overflow-hidden rounded-lg shadow-lg bg-gray-100 cursor-grab active:cursor-grabbing">
                 <div id="gallery-track-about" class="flex">
                   <div class="gallery-slide">
-                    <img src="society.jpg" alt="Galeri Foto YOI 1" class="w-full h-auto object-cover aspect-video pointer-events-none">
+                    <img src="society.jpg" alt="Galeri Foto YOI 1">
                   </div>
                   <div class="gallery-slide">
-                    <img src="nature.jpg" alt="Galeri Foto YOI 2" class="w-full h-auto object-cover aspect-video pointer-events-none">
+                    <img src="nature.jpg" alt="Galeri Foto YOI 2">
                   </div>
                   <div class="gallery-slide">
-                    <img src="city.jpeg" alt="Galeri Foto YOI 3" class="w-full h-auto object-cover aspect-video pointer-events-none">
+                    <img src="city.jpeg" alt="Galeri Foto YOI 3">
                   </div>
                   <div class="gallery-slide">
-                    <img src="technology.jpg" alt="Galeri Foto YOI 4" class="w-full h-auto object-cover aspect-video pointer-events-none">
+                    <img src="technology.jpg" alt="Galeri Foto YOI 4" >
                   </div>
                 </div>
                 
@@ -229,152 +257,132 @@
         <script>
           document.addEventListener('DOMContentLoaded', () => {
             
-            const galleryContainer = document.getElementById('gallery-container-about');
             const track = document.getElementById('gallery-track-about'); 
             const nextButton = document.getElementById('gallery-next-about');
             const prevButton = document.getElementById('gallery-prev-about');
             
-            if (track && nextButton && prevButton && galleryContainer) {
+            if (track && nextButton && prevButton) {
               let slides = Array.from(track.children);
               const slideCount = slides.length;
-              if (slideCount === 0) return; // Keluar jika tidak ada slide
+              if (slideCount === 0) return;
               
-              // 1. Kloning slide pertama dan terakhir
-              const firstClone = slides[0].cloneNode(true);
-              firstClone.id = 'first-clone';
-              const lastClone = slides[slideCount - 1].cloneNode(true);
-              lastClone.id = 'last-clone';
+              let currentIndex = 0; // Index 'bulat' (snapped)
+              let visualIndex = 0; // Index 'desimal' (saat di-drag)
+              let isTransitioning = false; // Flag untuk animasi 'snap'/'klik'
+              let isDragging = false; // Flag untuk drag
               
-              track.appendChild(firstClone);
-              track.prepend(lastClone);
-              
-              let allSlides = Array.from(track.children);
-              
-              let currentIndex = 1; // Mulai dari slide '1' (ASLI)
-              let isTransitioning = false;
-              
-              // 2. Set Posisi Awal (tanpa animasi)
-              track.style.transform = `translateX(-${currentIndex * 100}%)`;
-              
-              // Fungsi untuk menggeser slide
-              const shiftSlides = () => {
-                if (isTransitioning) return; // Jangan geser jika sedang transisi
-                isTransitioning = true; // Mulai transisi
-                track.classList.add('gallery-track-transition'); // Nyalakan animasi
-                track.style.transform = `translateX(-${currentIndex * 100}%)`;
-              };
+              let dragStart = 0;
+              let dragOffset = 0;
+              let slideWidth = 0; // Akan di-cache
 
-              // Fungsi untuk 'melompat' (reset) setelah animasi selesai
-              const handleJump = () => {
-                if (allSlides[currentIndex].id === 'first-clone') {
-                  track.classList.remove('gallery-track-transition');
-                  currentIndex = 1;
-                  track.style.transform = `translateX(-${currentIndex * 100}%)`;
-                } else if (allSlides[currentIndex].id === 'last-clone') {
-                  track.classList.remove('gallery-track-transition');
-                  currentIndex = allSlides.length - 2;
-                  track.style.transform = `translateX(-${currentIndex * 100}%)`;
-                }
-              };
-              
-              // 3. Event Listener untuk Tombol
+              // Fungsi UTAMA untuk update posisi semua kartu
+              function updateGallery(index, animate = true) {
+                  visualIndex = index; // Simpan index visual terakhir
+                  
+                  if (animate) {
+                      isTransitioning = true;
+                      setTimeout(() => {
+                          isTransitioning = false;
+                      }, 500); // Durasi animasi
+                  }
+                  
+                  slides.forEach((slide, i) => {
+                      // 1. Atur transisi (nyala/mati)
+                      slide.style.transition = animate ? 'transform 0.5s ease-in-out, opacity 0.5s ease-in-out, z-index 0.5s' : 'none';
+
+                      // 2. Hitung offset terpendek (untuk looping)
+                      let offset = i - visualIndex;
+                      offset = offset - slideCount * Math.round(offset / slideCount);
+                      
+                      const absOffset = Math.abs(offset);
+                      let translateX, scale, opacity, zIndex;
+
+                      // 3. Interpolasi (Hitung style berdasarkan offset 'desimal')
+                      // --- INI LOGIKA BARU (2D PEEK) ---
+                      if (absOffset <= 1) { 
+                          // Kartu di area tengah (termasuk yg lagi geser)
+                          translateX = (60 * offset); // Geser 60% (kanan) -> 0 (tengah) -> -60% (kiri)
+                          scale = 1 - (0.2 * absOffset); // 100% -> 80%
+                          opacity = 1 - (0.5 * absOffset); // 1 -> 0.5
+                          zIndex = 10 - Math.floor(absOffset); // 10 -> 9
+                      } else { 
+                          // Kartu di 'belakang' (jauh)
+                          translateX = offset > 0 ? 100 : -100; // Geser jauh
+                          scale = 0.5; // Kecil banget
+                          opacity = 0; // Hilang
+                          zIndex = 1;
+                      }
+
+                      // 4. Terapkan style (HANYA translateX dan scale)
+                      slide.style.transform = `translateX(${translateX}%) scale(${scale})`;
+                      slide.style.opacity = opacity;
+                      slide.style.zIndex = zIndex;
+                  });
+              }
+
+              // 2. Event Listener Tombol (Sama)
               nextButton.addEventListener('click', () => {
-                if (isTransitioning) return;
-                currentIndex++;
-                shiftSlides();
+                  if (isTransitioning || isDragging) return;
+                  currentIndex = (currentIndex + 1) % slideCount;
+                  updateGallery(currentIndex, true);
               });
               
               prevButton.addEventListener('click', () => {
-                if (isTransitioning) return;
-                currentIndex--;
-                shiftSlides();
+                  if (isTransitioning || isDragging) return;
+                  currentIndex = (currentIndex - 1 + slideCount) % slideCount;
+                  updateGallery(currentIndex, true);
               });
-              
-              // 4. Listener untuk 'Jump' (setelah animasi selesai)
-              // dan untuk 'membuka kunci' transisi
-              track.addEventListener('transitionend', () => {
-                handleJump();
-                isTransitioning = false; // Buka kunci setelah animasi selesai
-              });
-              
-              // 5. Tambahkan Event Listener untuk Touch (Swipe) & Mouse (Drag)
-              let isDragging = false;
-              let dragStart = 0;
-              let currentTranslate = 0;
-              let dragOffset = 0;
-              let slideWidth = 0;
-              
-              // Fungsi untuk memulai 'drag'
+
+              // 3. Event Listener Swipe/Drag (Sama)
               const startDrag = (e) => {
-                if (isTransitioning) return;
-                isDragging = true;
-                dragStart = e.type.includes('touch') ? e.touches[0].clientX : e.clientX;
-                track.classList.remove('gallery-track-transition');
-                // Hitung posisi translate saat ini berdasarkan index
-                slideWidth = slides[0].offsetWidth; 
-                currentTranslate = -currentIndex * slideWidth;
+                  if (isTransitioning) return;
+                  isDragging = true;
+                  dragStart = e.type.includes('touch') ? e.touches[0].clientX : e.clientX;
+                  dragOffset = 0;
+                  slideWidth = track.offsetWidth;
+                  track.style.cursor = 'grabbing';
               };
               
-              // Fungsi untuk 'dragging'
               const dragging = (e) => {
-                if (!isDragging) return;
-                const currentX = e.type.includes('touch') ? e.touches[0].clientX : e.clientX;
-                dragOffset = currentX - dragStart;
-                track.style.transform = `translateX(${currentTranslate + dragOffset}px)`;
+                  if (!isDragging) return;
+                  const currentX = e.type.includes('touch') ? e.touches[0].clientX : e.clientX;
+                  dragOffset = currentX - dragStart;
+                  
+                  // Sensitivitas: geser 1/2 lebar track = pindah 1 slide
+                  const indexDelta = dragOffset / (slideWidth / 2); 
+                  const newVisualIndex = currentIndex - indexDelta;
+                  
+                  updateGallery(newVisualIndex, false); 
               };
               
-              // Fungsi untuk 'melepas'
               const endDrag = (e) => {
-                if (!isDragging) return;
-                isDragging = false;
-                
-                // --- INI PERBAIKANNYA ---
-                // Jika tidak ada pergeseran (cuma klik), jangan lakukan apa-apa
-                // Biarkan event klik tombol yang bekerja.
-                if (dragOffset === 0) {
-                  return; 
-                }
-                // -------------------------
-
-                // Cek threshold (50px atau 1/4 lebar slide)
-                const threshold = slideWidth / 6; // Dibuat lebih sensitif
-                
-                if (Math.abs(dragOffset) > threshold) {
-                  if (dragOffset < 0) {
-                    // Geser ke kiri (Next)
-                    currentIndex++;
-                  } else {
-                    // Geser ke kanan (Prev)
-                    currentIndex--;
-                  }
-                }
-                
-                // Kembalikan animasi dan geser ke posisi index yang benar
-                shiftSlides(); // Panggil fungsi ini
-                
-                dragOffset = 0;
+                  if (!isDragging) return;
+                  isDragging = false;
+                  track.style.cursor = 'grab';
+                  
+                  currentIndex = Math.round(visualIndex);
+                  currentIndex = (currentIndex % slideCount + slideCount) % slideCount;
+                  
+                  updateGallery(currentIndex, true);
+                  
+                  dragOffset = 0;
               };
 
-              // Pasang listener-nya ke CONTAINER, bukan track
-              galleryContainer.addEventListener('mousedown', startDrag);
-              galleryContainer.addEventListener('mousemove', dragging);
-              galleryContainer.addEventListener('mouseup', endDrag);
-              galleryContainer.addEventListener('mouseleave', endDrag);
+              // Pasang listener-nya ke TRACK (Sama)
+              track.addEventListener('mousedown', startDrag);
+              track.addEventListener('mousemove', dragging);
+              track.addEventListener('mouseup', endDrag);
+              track.addEventListener('mouseleave', endDrag);
               
-              galleryContainer.addEventListener('touchstart', startDrag, { passive: true });
-              galleryContainer.addEventListener('touchmove', dragging, { passive: true });
-              galleryContainer.addEventListener('touchend', endDrag);
+              track.addEventListener('touchstart', startDrag, { passive: true });
+              track.addEventListener('touchmove', dragging, { passive: true });
+              track.addEventListener('touchend', endDrag);
 
-              // Update lebar slide jika window di-resize
-              window.addEventListener('resize', () => {
-                slideWidth = slides[0].offsetWidth;
-                track.classList.remove('gallery-track-transition');
-                currentTranslate = -currentIndex * slideWidth;
-                track.style.transform = `translateX(${currentTranslate}px)`;
-              });
+              // Set posisi awal (Sama)
+              updateGallery(currentIndex, true); 
 
             } else {
-              console.error('Elemen slider galeri di about.html tidak ditemukan.');
+                console.error('Elemen slider galeri di about.html tidak ditemukan.');
             }
           });
         </script>
