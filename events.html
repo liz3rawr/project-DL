@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events - YOI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@400;500&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="logoB1.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { font-family: 'Open Sans', sans-serif; color: #212121; background-color: #fff; }
+        .font-title { font-family: 'Poppins', sans-serif; font-weight: 700; }
+        .font-subheading { font-family: 'Roboto', sans-serif; font-weight: 500; }
+        .bg-primary-green { background-color: #32A852; } .text-primary-green { color: #32A852; }
+        .bg-primary-blue { background-color: #3B82F6; } .bg-primary-yellow { background-color: #FFB81C; }
+        .font-body-bold { font-family: 'Open Sans', sans-serif; font-weight: 700; }
+        .nav-link { font-family: 'Roboto', sans-serif; font-weight: 500; color: #4F4F4F; transition: color 0.3s ease; }
+        .nav-link:hover { color: #32A852; }
+        .btn-nav-home { font-family: 'Roboto', sans-serif; font-weight: 500; background-color: #32A852; color: white; transition: background-color 0.3s ease; }
+        .btn-nav-home:hover { background-color: #2B8C4E; }
+        .btn-nav-login { font-family: 'Roboto', sans-serif; font-weight: 500; color: #32A852; border-color: #32A852; transition: background-color 0.3s ease, color 0.3s ease; }
+        .btn-nav-login:hover { background-color: #32A852; color: white; }
+        /* Modal & Slider */
+        .modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.6); backdrop-filter: blur(5px); justify-content: center; align-items: center; padding: 1rem; }
+        .modal.active { display: flex; animation: fadeIn 0.3s ease; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        .modal-content { background-color: #fff; border-radius: 1rem; max-width: 800px; width: 100%; max-height: 90vh; overflow-y: auto; position: relative; animation: slideUp 0.3s ease; }
+        @keyframes slideUp { from { transform: translateY(50px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+        .modal-slider { position: relative; height: 300px; overflow: hidden; border-radius: 0.5rem; margin-top: 1.5rem; }
+        .modal-slide { position: absolute; width: 100%; height: 100%; opacity: 0; transition: opacity 0.5s; }
+        .modal-slide.active { opacity: 1; z-index: 1; }
+        .modal-slide img { width: 100%; height: 100%; object-fit: cover; }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen">
+
+    <nav class="bg-white p-4 shadow-sm sticky top-0 z-50 w-full">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="index.html"><img src="logoB1.png" alt="YOI Logo" class="h-12 w-auto"></a>
+            <div class="flex items-center space-x-6">
+                <a href="index.html" class="text-sm nav-link">Home</a>
+                <a href="about.html" class="text-sm nav-link">About</a>
+                <a href="services.html" class="text-sm nav-link">Services</a>
+                <a href="events.html" class="text-sm py-2 px-5 rounded-full btn-nav-home">Events</a>
+                <a href="#" class="text-sm border py-2 px-5 rounded-full btn-nav-login">Login</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-grow container mx-auto px-4 py-16">
+        <div class="text-center mb-16">
+            <h1 class="text-4xl md:text-5xl mb-4 font-title text-[#212121]">Events & Kegiatan</h1>
+            <p class="text-lg text-[#4F4F4F] max-w-2xl mx-auto">Bergabunglah untuk berkontribusi pada masa depan yang berkelanjutan.</p>
+        </div>
+
+        <section class="mb-20">
+            <h2 class="text-3xl mb-8 font-title border-l-4 border-[#32A852] pl-4 text-[#212121]">Event Mendatang</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 flex flex-col justify-between hover:-translate-y-1 transition">
+                    <div>
+                        <div class="flex justify-between mb-4"><span class="bg-primary-blue text-white text-xs px-3 py-1 rounded-full font-subheading">Technology</span><span class="text-primary-green bg-green-50 px-3 py-1 rounded-full text-xs font-medium">Upcoming</span></div>
+                        <h3 class="text-2xl font-title mb-3">Green Tech Summit 2025</h3>
+                        <p class="text-gray-600 text-sm mb-6">Diskusi masa depan energi terbarukan bersama para inovator.</p>
+                        <div class="text-sm text-gray-500 space-y-2 mb-8"><p>📅 15 Februari 2025</p><p>📍 JCC, Jakarta</p></div>
+                    </div>
+                    <button class="w-full bg-primary-green text-white py-3 rounded-xl font-subheading hover:bg-green-700 transition">Daftar Sekarang</button>
+                </div>
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 flex flex-col justify-between hover:-translate-y-1 transition">
+                    <div>
+                        <div class="flex justify-between mb-4"><span class="bg-primary-green text-white text-xs px-3 py-1 rounded-full font-subheading">Nature</span><span class="text-primary-green bg-green-50 px-3 py-1 rounded-full text-xs font-medium">Upcoming</span></div>
+                        <h3 class="text-2xl font-title mb-3">Coastal Cleanup Day</h3>
+                        <p class="text-gray-600 text-sm mb-6">Aksi bersih pantai dan edukasi sampah plastik.</p>
+                        <div class="text-sm text-gray-500 space-y-2 mb-8"><p>📅 22 Februari 2025</p><p>📍 Pantai Ancol</p></div>
+                    </div>
+                    <button class="w-full bg-primary-green text-white py-3 rounded-xl font-subheading hover:bg-green-700 transition">Daftar Sekarang</button>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="text-3xl mb-8 font-title border-l-4 border-gray-800 pl-4 text-[#212121]">Event Terdahulu</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 cursor-pointer hover:-translate-y-1 transition event-trigger" data-id="event1">
+                    <span class="bg-primary-yellow text-white text-xs px-3 py-1 rounded-full font-subheading mb-4 inline-block">Society</span>
+                    <h3 class="text-xl font-title mb-4">Youth Climate Forum '24</h3><p class="text-sm text-gray-500">📅 10 Des 2024 • 📍 UI Depok</p>
+                </div>
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 cursor-pointer hover:-translate-y-1 transition event-trigger" data-id="event2">
+                    <span class="bg-primary-green text-white text-xs px-3 py-1 rounded-full font-subheading mb-4 inline-block">Nature</span>
+                    <h3 class="text-xl font-title mb-4">Tree Planting Campaign</h3><p class="text-sm text-gray-500">📅 15 Nov 2024 • 📍 Bogor</p>
+                </div>
+                 <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 cursor-pointer hover:-translate-y-1 transition event-trigger" data-id="event3">
+                    <span class="bg-primary-blue text-white text-xs px-3 py-1 rounded-full font-subheading mb-4 inline-block">Technology</span>
+                    <h3 class="text-xl font-title mb-4">Innovation Hackathon</h3><p class="text-sm text-gray-500">📅 20 Okt 2024 • 📍 Jakarta</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="p-10 md:p-16 mt-auto text-gray-300" style="background-color: #212121;">
+        <div class="container mx-auto">
+            <div class="flex flex-col md:flex-row justify-between gap-10">
+                <div class="md:w-1/2 lg:w-2/5">
+                    <img src="logoW1.png" alt="YOI Logo" class="h-10 w-auto mb-4">
+                    <p class="mb-2 text-lg font-body-bold text-white">YOI: A Sustainability Community</p>
+                    <p class="mb-2 italic text-gray-400">Young.Open-Minded.Innovative ✨</p>
+                    <p class="font-body-bold text-primary-green">#EmpowerFutureGeneration</p>
+                </div>
+                <div class="md:w-1/2 lg:w-2/5">
+                    <h3 class="font-title text-2xl text-white mb-4 uppercase">GET IN TOUCH!</h3>
+                    <div class="space-y-3 font-subheading">
+                        <a href="#" class="flex items-center space-x-3 group"><img src="ig.png" alt="IG" class="w-6 h-6"><span class="group-hover:text-white transition-colors">namaIG</span></a>
+                        <a href="#" class="flex items-center space-x-3 group"><img src="tiktok.png" alt="TikTok" class="w-6 h-6"><span class="group-hover:text-white transition-colors">namaTT</span></a>
+                        <a href="#" class="flex items-center space-x-3 group"><img src="wa.png" alt="WA" class="w-6 h-6"><span class="group-hover:text-white transition-colors">noWA</span></a>
+                        <a href="#" class="flex items-center space-x-3 group"><img src="yutub.png" alt="YT" class="w-6 h-6"><span class="group-hover:text-white transition-colors">namaChannel</span></a>
+                        <a href="#" class="flex items-center space-x-3 group"><img src="email.png" alt="Email" class="w-6 h-6"><span class="group-hover:text-white transition-colors">namaEmail</span></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="border-t border-gray-700 my-8">
+            <div class="text-center text-gray-400 text-sm"><p>&copy; 2025 YOI: A Sustainability Community. All rights reserved.</p></div>
+        </div>
+    </footer>
+
+    <div id="eventModal" class="modal"><div class="modal-content"><span class="absolute top-4 right-6 text-3xl cursor-pointer z-10 text-gray-500 hover:text-black modal-close">&times;</span><div id="modalBody" class="p-8"></div></div></div>
+    <script>
+        const events = {
+            'event1': { title: 'Youth Climate Forum 2024', desc: 'Forum diskusi 300+ pemuda menghasilkan deklarasi iklim.', imgs: ['https://source.unsplash.com/random/800x400?conference', 'https://source.unsplash.com/random/800x400?youth'] },
+            'event2': { title: 'Tree Planting Campaign', desc: 'Menanam 1.000 bibit pohon di area kritis Bogor.', imgs: ['https://source.unsplash.com/random/800x400?planting', 'https://source.unsplash.com/random/800x400?forest'] },
+            'event3': { title: 'Innovation Hackathon', desc: '24 jam menciptakan solusi digital untuk lingkungan.', imgs: ['https://source.unsplash.com/random/800x400?hackathon', 'https://source.unsplash.com/random/800x400?coding'] }
+        };
+        const modal = document.getElementById('eventModal'), body = document.getElementById('modalBody');
+        document.querySelectorAll('.event-trigger').forEach(t => t.addEventListener('click', () => {
+            const e = events[t.dataset.id];
+            body.innerHTML = `<h2 class="text-3xl font-title mb-4">${e.title}</h2><p class="text-gray-700 mb-6">${e.desc}</p><div class="modal-slider">${e.imgs.map((src, i) => `<div class="modal-slide ${i===0?'active':''}"><img src="${src}"></div>`).join('')}</div>`;
+            modal.classList.add('active');
+            let slide = 0; setInterval(() => { const s = document.querySelectorAll('.modal-slide'); s[slide].classList.remove('active'); slide = (slide+1)%s.length; s[slide].classList.add('active'); }, 3000);
+        }));
+        document.querySelector('.modal-close').onclick = () => modal.classList.remove('active');
+        window.onclick = (e) => e.target == modal ? modal.classList.remove('active') : null;
+    </script>
+</body>
+</html>
