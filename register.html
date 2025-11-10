@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register | YOI</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Roboto:wght@500&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body {
+      font-family: 'Open Sans', sans-serif;
+      color: #212121;
+      background-image: linear-gradient(to right, #32A852 25%, #3B82F6 60%, #FFD333 90%);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .font-title { font-family: 'Poppins', sans-serif; font-weight: 700; }
+    .text-gradient-heading {
+      background-image: linear-gradient(to right, #32A852, #3B82F6, #FFD333);
+      -webkit-text-fill-color: transparent;
+      -webkit-background-clip: text;
+      background-clip: text;
+    }
+
+    .register-card {
+      background: rgba(255,255,255,0.95);
+      border-radius: 1rem;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+      padding: 2rem;
+      width: 100%;
+      max-width: 700px;
+      backdrop-filter: blur(6px);
+      animation: fadeIn 0.4s ease-out;
+    }
+
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    .field { width: 100%; padding: .75rem; border: 1px solid #ccc; border-radius: .5rem; outline: none; transition: border-color .3s ease; }
+    .field:focus { border-color: #32A852; }
+    .btn-register { background: #32A852; color: white; border-radius: 9999px; font-weight: 600; padding: .75rem; width: 100%; transition: background-color .3s; }
+    .btn-register:hover { background: #2B8C4E; }
+    .error-box { display: none; color: #b91c1c; background: #fee2e2; border: 1px solid #fecaca; padding: .5rem .75rem; border-radius: .5rem; font-size: .875rem; }
+
+    .btn-nav-home { background: #32A852; color: white; }
+    .btn-nav-home:hover { background: #2B8C4E; }
+    .btn-nav-login { color: #32A852; border-color: #32A852; transition: .3s; }
+    .btn-nav-login:hover { background: #32A852; color: white; }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="bg-white p-4 shadow-sm sticky top-0 z-50 w-full">
+    <div class="container mx-auto flex justify-between items-center">
+      <a href="index.html"><img src="logoB1.png" alt="YOI Logo" class="h-12 w-auto"></a>
+      <div class="flex items-center space-x-6">
+        <a href="index.html" class="text-sm nav-link">Home</a>
+        <a href="about.html" class="text-sm nav-link">About</a>
+        <a href="services.html" class="text-sm nav-link">Services</a>
+        <a href="events.html" class="text-sm nav-link">Events</a>
+        <a href="login.html" class="text-sm border py-2 px-5 rounded-full btn-nav-login">Login</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Register Section -->
+  <main class="flex-grow flex items-center justify-center px-4 py-16">
+    <div class="register-card">
+      <div class="text-center mb-6">
+        <img src="logoB1.png" alt="YOI Logo" class="h-14 mx-auto mb-4">
+        <h1 class="text-3xl font-title mb-1 text-gradient-heading">Daftar Akun YOI</h1>
+        <p class="text-gray-700">Buat akun untuk mengikuti event & program YOI.</p>
+      </div>
+
+      <form id="registerForm" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div><label for="name" class="block text-sm mb-1">Nama Lengkap</label><input id="name" class="field" required></div>
+        <div><label for="email" class="block text-sm mb-1">Email</label><input id="email" type="email" class="field" required></div>
+        <div><label for="password" class="block text-sm mb-1">Password</label><input id="password" type="password" class="field" required></div>
+        <div><label for="confirm" class="block text-sm mb-1">Konfirmasi Password</label><input id="confirm" type="password" class="field" required></div>
+
+        <div class="md:col-span-2"><label for="bio" class="block text-sm mb-1">Tentang Kamu</label><textarea id="bio" rows="3" class="field"></textarea></div>
+
+        <div class="md:col-span-2"><div id="errorBox" class="error-box"></div></div>
+
+        <div class="md:col-span-2 flex items-center gap-2">
+          <input id="agree" type="checkbox" required>
+          <label for="agree" class="text-sm">Saya setuju dengan <a href="#" class="text-primary-green font-medium">Ketentuan</a>.</label>
+        </div>
+
+        <div class="md:col-span-2">
+          <button type="submit" class="btn-register mt-2">Buat Akun</button>
+          <p class="text-center text-sm text-gray-700 mt-4">
+            Sudah punya akun? <a href="login.html" class="text-primary-green font-medium">Masuk</a>
+          </p>
+        </div>
+      </form>
+    </div>
+  </main>
+
+  <footer class="p-6 text-gray-200 text-sm text-center bg-[#212121]/90 backdrop-blur-md">
+    &copy; 2025 YOI: A Sustainability Community. All rights reserved.
+  </footer>
+
+  <script>
+    const form=document.getElementById('registerForm');
+    const errorBox=document.getElementById('errorBox');
+    form.addEventListener('submit',e=>{
+      e.preventDefault();
+      errorBox.style.display='none';
+      const n=name.value.trim(),em=email.value.trim(),p=password.value,cf=confirm.value;
+      if(!n||!em||!p||!cf){show('Lengkapi semua field wajib.');return;}
+      if(p.length<6){show('Password minimal 6 karakter.');return;}
+      if(p!==cf){show('Konfirmasi password tidak cocok.');return;}
+      alert('Pendaftaran berhasil! Silakan login.');
+      window.location.href='login.html';
+      function show(msg){errorBox.textContent=msg;errorBox.style.display='block';}
+    });
+  </script>
+</body>
+</html>
