@@ -7,6 +7,7 @@
   <title>Login | YOI</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Roboto:wght@500&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" type="image/png" href="logo/logoB1.png">
 
   <style>
     body {
@@ -74,33 +75,35 @@
       font-size: 0.875rem;
       display: none;
     }
-
-    .btn-nav-home { background: #32A852; color: white; }
+    
+    /* Nav styles */
+    .nav-link { font-family: 'Roboto', sans-serif; font-weight: 500; color: #4F4F4F; transition: color .3s; }
+    .nav-link:hover { color: #32A852; }
+    .btn-nav-home { font-family: 'Roboto', sans-serif; font-weight: 500; background: #32A852; color: white; transition: background-color .3s; }
     .btn-nav-home:hover { background: #2B8C4E; }
-    .btn-nav-login { color: #32A852; border-color: #32A852; transition: .3s; }
+    .btn-nav-login { font-family: 'Roboto', sans-serif; font-weight: 500; color: #32A852; border-color: #32A852; transition: .3s; }
     .btn-nav-login:hover { background: #32A852; color: white; }
+    .text-primary-green { color: #32A852; } /* Menambahkan class yang hilang */
   </style>
 </head>
 <body>
 
-  <!-- Navbar -->
   <nav class="bg-white p-4 shadow-sm sticky top-0 z-50 w-full">
     <div class="container mx-auto flex justify-between items-center">
-      <a href="index.html"><img src="logoB1.png" alt="YOI Logo" class="h-12 w-auto"></a>
+      <a href="index.html"><img src="logo/logoB1.png" alt="YOI Logo" class="h-12 w-auto"></a>
       <div class="flex items-center space-x-6">
         <a href="index.html" class="text-sm nav-link">Home</a>
         <a href="about.html" class="text-sm nav-link">About</a>
         <a href="services.html" class="text-sm nav-link">Services</a>
         <a href="events.html" class="text-sm nav-link">Events</a>
-        <a href="login.html" class="text-sm border py-2 px-5 rounded-full btn-nav-home">Login</a>
+        <a href="login.html" class="text-sm py-2 px-5 rounded-full btn-nav-home">Login</a>
       </div>
     </div>
   </nav>
 
-  <!-- Login Section -->
   <main class="flex-grow flex items-center justify-center px-4 py-16">
     <div class="login-card">
-      <img src="logoB1.png" alt="YOI Logo" class="h-14 mx-auto mb-4">
+      <img src="logo/logoB1.png" alt="YOI Logo" class="h-14 mx-auto mb-4">
       <h1 class="text-3xl font-title mb-2 text-gradient-heading">Login YOI</h1>
       <p class="text-gray-700 mb-6">Masuk untuk melanjutkan ke dashboard atau event.</p>
 
@@ -121,7 +124,7 @@
 
         <p class="mt-6 text-sm text-gray-700">
           Belum punya akun?
-          <a href="register.html" class="text-primary-green font-medium">Daftar sekarang</a>
+          <a href="register.html" class="text-primary-green font-medium underline">Daftar sekarang</a>
         </p>
       </form>
     </div>

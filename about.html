@@ -9,7 +9,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Poppins:wght@700&family=Roboto:wght@500&display=swap" rel="stylesheet">
-        <link rel="icon" type="image/png" href="logoB1.png">
+        <link rel="icon" type="image/png" href="logo/logoB1.png">
         <script src="https://cdn.tailwindcss.com"></script>
         
         <style>
@@ -67,7 +67,6 @@
           }
           
           #gallery-container-about {
-            /* Hapus perspective, sudah tidak 3D */
             position: relative;
           }
           
@@ -75,7 +74,6 @@
             position: relative;
             width: 100%;
             height: 400px;
-            /* Hapus transform-style, sudah tidak 3D */
             cursor: grab;
           }
           #gallery-track-about:active {
@@ -88,8 +86,8 @@
             left: 0;
             right: 0;
             margin: 0 auto;
-            width: 60%; /* Lebar kartu 60% */
-            height: 80%; /* Tinggi kartu 80% */
+            width: 60%; 
+            height: 80%; 
             user-select: none;
             border-radius: 0.75rem;
             overflow: hidden;
@@ -109,7 +107,7 @@
         <nav class="bg-white p-4 shadow-sm sticky top-0 z-50 w-full">
           <div class="container mx-auto flex justify-between items-center">
             <a href="index.html" aria-label="Homepage">
-              <img src="logoB1.png" alt="YOI Logo" class="h-12 w-auto">
+              <img src="logo/logoB1.png" alt="YOI Logo" class="h-12 w-auto">
             </a>
             
             <div class="flex items-center space-x-6"> 
@@ -117,7 +115,7 @@
               <a href="about.html" class="text-sm py-2 px-5 rounded-full btn-nav-home">About</a>
               <a href="services.html" class="text-sm nav-link">Services</a>
               <a href="events.html" class="text-sm nav-link">Events</a>
-              <a href="#" class="text-sm border py-2 px-5 rounded-full btn-nav-login">Login</a>
+              <a href="login.html" class="text-sm border py-2 px-5 rounded-full btn-nav-login">Login</a>
             </div>
           </div>
         </nav>
@@ -147,7 +145,7 @@
                 </div>
                 
                 <div class="md:col-span-2">
-                  <img src="about_pic.JPG" alt="Grup YOI Community sedang berdiskusi" class="rounded-lg shadow-xl w-full h-auto object-cover aspect-square md:aspect-auto">
+                  <img src="about/about_pic.JPG" alt="Foto Dokumentasi YOI" class="rounded-lg shadow-xl w-full h-auto object-cover aspect-square md:aspect-auto">
                 </div>
 
               </div>
@@ -161,16 +159,16 @@
               <div id="gallery-container-about" class="relative max-w-4xl mx-auto">
                 <div id="gallery-track-about" class="flex">
                   <div class="gallery-slide">
-                    <img src="about_pic.JPG" alt="Galeri Foto YOI 1">
+                    <img src="about/about_pic.JPG" alt="Galeri Foto YOI 1">
                   </div>
                   <div class="gallery-slide">
-                    <img src="pic 1.jpg" alt="Galeri Foto YOI 2">
+                    <img src="our gallery/pic 1.jpg" alt="Galeri Foto YOI 2">
                   </div>
                   <div class="gallery-slide">
-                    <img src="pic 2.jpg" alt="Galeri Foto YOI 3">
+                    <img src="our gallery/pic 2.jpg" alt="Galeri Foto YOI 3">
                   </div>
                   <div class="gallery-slide">
-                    <img src="pic 3.jpg" alt="Galeri Foto YOI 4" >
+                    <img src="our gallery/pic 3.jpg" alt="Galeri Foto YOI 4" >
                   </div>
                 </div>
                 
@@ -192,7 +190,7 @@
             <div class="flex flex-col md:flex-row justify-between gap-10">
               
               <div class="md:w-1/2 lg:w-2/5">
-                <img src="logoW1.png" alt="YOI Logo" class="h-10 w-auto mb-4">
+                <img src="logo/logoW1.png" alt="YOI Logo" class="h-10 w-auto mb-4">
                 
                 <p class="mb-2 text-lg font-body-bold text-white">YOI: A Sustainability Community</p>
                 <p class="mb-2 italic text-gray-400">Young.Open-Minded.Innovative ✨</p>
@@ -204,23 +202,23 @@
                 <h3 class="font-title text-2xl text-white mb-4 uppercase">GET IN TOUCH!</h3>
                 <div class="space-y-3 font-subheading">
                   <a href="#" class="flex items-center space-x-3 group">
-                    <img src="ig.png" alt="Ikon Instagram" class="w-6 h-6">
+                    <img src="social media/ig.png" alt="Ikon Instagram" class="w-6 h-6">
                     <span class="group-hover:text-white transition-colors">namaIG</span>
                   </a>
                   <a href="#" class="flex items-center space-x-3 group">
-                    <img src="tiktok.png" alt="Ikon TikTok" class="w-6 h-6">
+                    <img src="social media/tiktok.png" alt="Ikon TikTok" class="w-6 h-6">
                     <span class="group-hover:text-white transition-colors">namaTT</span>
                   </a>
                   <a href="#" class="flex items-center space-x-3 group">
-                    <img src="wa.png" alt="Ikon WA" class="w-6 h-6">
+                    <img src="social media/wa.png" alt="Ikon WA" class="w-6 h-6">
                     <span class="group-hover:text-white transition-colors">noWA</span>
                   </a>
                   <a href="#" class="flex items-center space-x-3 group">
-                    <img src="yutub.png" alt="Ikon YT" class="w-6 h-6">
+                    <img src="social media/yutub.png" alt="Ikon YT" class="w-6 h-6">
                     <span class="group-hover:text-white transition-colors">namaChannel</span>
                   </a>
                   <a href="#" class="flex items-center space-x-3 group">
-                    <img src="email.png" alt="Ikon Email" class="w-6 h-6">
+                    <img src="social media/email.png" alt="Ikon Email" class="w-6 h-6">
                     <span class="group-hover:text-white transition-colors">namaEmail</span>
                   </a>
                 </div>
@@ -247,61 +245,38 @@
               const slideCount = slides.length;
               if (slideCount === 0) return;
               
-              let currentIndex = 0; // Index 'bulat' (snapped)
-              let visualIndex = 0; // Index 'desimal' (saat di-drag)
-              let isTransitioning = false; // Flag untuk animasi 'snap'/'klik'
-              let isDragging = false; // Flag untuk drag
-              
-              let dragStart = 0;
-              let dragOffset = 0;
-              let slideWidth = 0; // Akan di-cache
+              let currentIndex = 0; let visualIndex = 0; let isTransitioning = false; let isDragging = false;
+              let dragStart = 0; let dragOffset = 0; let slideWidth = 0;
 
-              // Fungsi UTAMA untuk update posisi semua kartu
               function updateGallery(index, animate = true) {
-                  visualIndex = index; // Simpan index visual terakhir
-                  
+                  visualIndex = index; 
                   if (animate) {
                       isTransitioning = true;
-                      setTimeout(() => {
-                          isTransitioning = false;
-                      }, 500); // Durasi animasi
+                      setTimeout(() => { isTransitioning = false; }, 500); 
                   }
-                  
                   slides.forEach((slide, i) => {
-                      // 1. Atur transisi (nyala/mati)
                       slide.style.transition = animate ? 'transform 0.5s ease-in-out, opacity 0.5s ease-in-out, z-index 0.5s' : 'none';
-
-                      // 2. Hitung offset terpendek (untuk looping)
                       let offset = i - visualIndex;
                       offset = offset - slideCount * Math.round(offset / slideCount);
-                      
                       const absOffset = Math.abs(offset);
                       let translateX, scale, opacity, zIndex;
-
-                      // 3. Interpolasi (Hitung style berdasarkan offset 'desimal')
-                      // --- INI LOGIKA BARU (2D PEEK) ---
                       if (absOffset <= 1) { 
-                          // Kartu di area tengah (termasuk yg lagi geser)
-                          translateX = (60 * offset); // Geser 60% (kanan) -> 0 (tengah) -> -60% (kiri)
-                          scale = 1 - (0.2 * absOffset); // 100% -> 80%
-                          opacity = 1 - (0.5 * absOffset); // 1 -> 0.5
-                          zIndex = 10 - Math.floor(absOffset); // 10 -> 9
+                          translateX = (60 * offset); 
+                          scale = 1 - (0.2 * absOffset); 
+                          opacity = 1 - (0.5 * absOffset); 
+                          zIndex = 10 - Math.floor(absOffset);
                       } else { 
-                          // Kartu di 'belakang' (jauh)
-                          translateX = offset > 0 ? 100 : -100; // Geser jauh
-                          scale = 0.5; // Kecil banget
-                          opacity = 0; // Hilang
+                          translateX = offset > 0 ? 100 : -100; 
+                          scale = 0.5; 
+                          opacity = 0; 
                           zIndex = 1;
                       }
-
-                      // 4. Terapkan style (HANYA translateX dan scale)
                       slide.style.transform = `translateX(${translateX}%) scale(${scale})`;
                       slide.style.opacity = opacity;
                       slide.style.zIndex = zIndex;
                   });
               }
 
-              // 2. Event Listener Tombol (Sama)
               nextButton.addEventListener('click', () => {
                   if (isTransitioning || isDragging) return;
                   currentIndex = (currentIndex + 1) % slideCount;
@@ -314,7 +289,6 @@
                   updateGallery(currentIndex, true);
               });
 
-              // 3. Event Listener Swipe/Drag (Sama)
               const startDrag = (e) => {
                   if (isTransitioning) return;
                   isDragging = true;
@@ -328,11 +302,8 @@
                   if (!isDragging) return;
                   const currentX = e.type.includes('touch') ? e.touches[0].clientX : e.clientX;
                   dragOffset = currentX - dragStart;
-                  
-                  // Sensitivitas: geser 1/2 lebar track = pindah 1 slide
                   const indexDelta = dragOffset / (slideWidth / 2); 
                   const newVisualIndex = currentIndex - indexDelta;
-                  
                   updateGallery(newVisualIndex, false); 
               };
               
@@ -340,26 +311,20 @@
                   if (!isDragging) return;
                   isDragging = false;
                   track.style.cursor = 'grab';
-                  
                   currentIndex = Math.round(visualIndex);
                   currentIndex = (currentIndex % slideCount + slideCount) % slideCount;
-                  
                   updateGallery(currentIndex, true);
-                  
                   dragOffset = 0;
               };
 
-              // Pasang listener-nya ke TRACK (Sama)
               track.addEventListener('mousedown', startDrag);
               track.addEventListener('mousemove', dragging);
               track.addEventListener('mouseup', endDrag);
               track.addEventListener('mouseleave', endDrag);
-              
               track.addEventListener('touchstart', startDrag, { passive: true });
               track.addEventListener('touchmove', dragging, { passive: true });
               track.addEventListener('touchend', endDrag);
 
-              // Set posisi awal (Sama)
               updateGallery(currentIndex, true); 
 
             } else {

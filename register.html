@@ -7,6 +7,7 @@
   <title>Register | YOI</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Roboto:wght@500&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" type="image/png" href="logo/logoB1.png">
 
   <style>
     body {
@@ -43,19 +44,20 @@
     .btn-register { background: #32A852; color: white; border-radius: 9999px; font-weight: 600; padding: .75rem; width: 100%; transition: background-color .3s; }
     .btn-register:hover { background: #2B8C4E; }
     .error-box { display: none; color: #b91c1c; background: #fee2e2; border: 1px solid #fecaca; padding: .5rem .75rem; border-radius: .5rem; font-size: .875rem; }
-
-    .btn-nav-home { background: #32A852; color: white; }
-    .btn-nav-home:hover { background: #2B8C4E; }
-    .btn-nav-login { color: #32A852; border-color: #32A852; transition: .3s; }
+    
+    /* Nav styles */
+    .nav-link { font-family: 'Roboto', sans-serif; font-weight: 500; color: #4F4F4F; transition: color .3s; }
+    .nav-link:hover { color: #32A852; }
+    .btn-nav-login { font-family: 'Roboto', sans-serif; font-weight: 500; color: #32A852; border-color: #32A852; transition: .3s; }
     .btn-nav-login:hover { background: #32A852; color: white; }
+    .text-primary-green { color: #32A852; } /* Menambahkan class yang hilang */
   </style>
 </head>
 <body>
 
-  <!-- Navbar -->
   <nav class="bg-white p-4 shadow-sm sticky top-0 z-50 w-full">
     <div class="container mx-auto flex justify-between items-center">
-      <a href="index.html"><img src="logoB1.png" alt="YOI Logo" class="h-12 w-auto"></a>
+      <a href="index.html"><img src="logo/logoB1.png" alt="YOI Logo" class="h-12 w-auto"></a>
       <div class="flex items-center space-x-6">
         <a href="index.html" class="text-sm nav-link">Home</a>
         <a href="about.html" class="text-sm nav-link">About</a>
@@ -66,11 +68,10 @@
     </div>
   </nav>
 
-  <!-- Register Section -->
   <main class="flex-grow flex items-center justify-center px-4 py-16">
     <div class="register-card">
       <div class="text-center mb-6">
-        <img src="logoB1.png" alt="YOI Logo" class="h-14 mx-auto mb-4">
+        <img src="logo/logoB1.png" alt="YOI Logo" class="h-14 mx-auto mb-4">
         <h1 class="text-3xl font-title mb-1 text-gradient-heading">Daftar Akun YOI</h1>
         <p class="text-gray-700">Buat akun untuk mengikuti event & program YOI.</p>
       </div>
@@ -93,7 +94,8 @@
         <div class="md:col-span-2">
           <button type="submit" class="btn-register mt-2">Buat Akun</button>
           <p class="text-center text-sm text-gray-700 mt-4">
-            Sudah punya akun? <a href="login.html" class="text-primary-green font-medium">Masuk</a>
+            Sudah punya akun? 
+            <a href="login.html" class="text-primary-green font-medium underline">Masuk</a>
           </p>
         </div>
       </form>
