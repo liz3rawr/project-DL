@@ -106,7 +106,9 @@
             height: 300px; 
             overflow: hidden; 
             border-radius: 0.5rem; 
-            margin-top: 1.5rem; }
+            margin-top: 1.5rem;
+            background-color: #212121; /* Latar belakang hitam untuk letterboxing */
+        }
         .modal-slide { 
             position: absolute; 
             width: 100%; 
@@ -121,7 +123,7 @@
         .modal-slide img { 
             width: 100%; 
             height: 100%; 
-            object-fit: contain; 
+            object-fit: contain; /* Tidak ter-crop */
         }
     </style>
 </head>
@@ -210,11 +212,14 @@
                 <div class="md:w-1/2 lg:w-2/5">
                     <h3 class="font-title text-2xl text-white mb-4 uppercase">GET IN TOUCH!</h3>
                     <div class="space-y-3 font-subheading">
-                        <a href="#" class="flex items-center space-x-3 group"><img src="social media/ig.png" alt="IG" class="w-6 h-6"><span class="group-hover:text-white transition-colors">namaIG</span></a>
-                        <a href="#" class="flex items-center space-x-3 group"><img src="social media/tiktok.png" alt="TikTok" class="w-6 h-6"><span class="group-hover:text-white transition-colors">namaTT</span></a>
-                        <a href="#" class="flex items-center space-x-3 group"><img src="social media/wa.png" alt="WA" class="w-6 h-6"><span class="group-hover:text-white transition-colors">noWA</span></a>
-                        <a href="#" class="flex items-center space-x-3 group"><img src="social media/yutub.png" alt="YT" class="w-6 h-6"><span class="group-hover:text-white transition-colors">namaChannel</span></a>
+                        <a href="https://www.instagram.com/yoiniverse?igsh=NHF6bHVqdzJmdzNw" class="flex items-center space-x-3 group"><img src="social media/ig.png" alt="IG" class="w-6 h-6"><span class="group-hover:text-white transition-colors">@yoiniverse</span></a>
+                        <a href="https://www.tiktok.com/@yoiniversee?_r=1&_t=ZS-91MVXGnqiTY" class="flex items-center space-x-3 group"><img src="social media/tiktok.png" alt="TikTok" class="w-6 h-6"><span class="group-hover:text-white transition-colors">@yoiniversee</span></a>
+                        <a href="https://www.youtube.com/@yoiniverse" class="flex items-center space-x-3 group"><img src="social media/yutub.png" alt="YT" class="w-6 h-6"><span class="group-hover:text-white transition-colors">@yoiniverse</span></a>
+                        <a href="https://www.linkedin.com/company/yoiniverse/" class="flex items-center space-x-3 group"><img src="social media/linkedin.png" alt="LinkedIn" class="w-6 h-6"><span class="group-hover:text-white transition-colors">yoiniverse</span></a>
+                        <a href="https://open.spotify.com/show/1koidbyaY5sOEUtn7iuOQP" class="flex items-center space-x-3 group"><img src="social media/spotify.png" alt="Spotify" class="w-6 h-6"><span class="group-hover:text-white transition-colors">Spotify</span></a>
                         <a href="#" class="flex items-center space-x-3 group"><img src="social media/email.png" alt="Email" class="w-6 h-6"><span class="group-hover:text-white transition-colors">namaEmail</span></a>
+                        <a href="#" class="flex items-center space-x-3 group"><img src="social media/wa.png" alt="WA" class="w-6 h-6"><span class="group-hover:text-white transition-colors">noWA</span></a>
+                        
                     </div>
                 </div>
             </div>
@@ -252,9 +257,10 @@
         const modal = document.getElementById('eventModal'), body = document.getElementById('modalBody');
         document.querySelectorAll('.event-trigger').forEach(t => t.addEventListener('click', () => {
             const e = events[t.dataset.id];
+            // Path di sini sudah benar karena JS akan mencari 'events/namafile.jpg'
             body.innerHTML = `<h2 class="text-3xl font-title mb-4">${e.title}</h2><p class="text-gray-700 mb-6">${e.desc}</p><div class="modal-slider">${e.imgs.map((src, i) => `<div class="modal-slide ${i===0?'active':''}"><img src="${src}"></div>`).join('')}</div>`;
             modal.classList.add('active');
-            // Slider sederhana
+            
             let slide = 0; 
             const intervalId = setInterval(() => { 
                 const s = document.querySelectorAll('.modal-slide'); 
@@ -264,14 +270,13 @@
                 s[slide].classList.add('active'); 
             }, 3000);
             
-            // Simpan interval ID untuk dibersihkan saat modal ditutup
             modal.dataset.intervalId = intervalId; 
         }));
 
         function closeModal() {
             const intervalId = modal.dataset.intervalId;
             if (intervalId) {
-                clearInterval(intervalId); // Hentikan slider
+                clearInterval(intervalId); 
                 delete modal.dataset.intervalId;
             }
             modal.classList.remove('active');
