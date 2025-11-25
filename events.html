@@ -273,18 +273,7 @@
             const e = events[t.dataset.id];
             body.innerHTML = `<h2 class="text-3xl font-title mb-4">${e.title}</h2><p class="text-gray-700 mb-6">${e.desc}</p><div class="modal-slider">${e.imgs.map((src, i) => `<div class="modal-slide ${i===0?'active':''}"><img src="${src}"></div>`).join('')}</div>`;
             modal.classList.add('active');
-            // Slider sederhana
-            let slide = 0; 
-            const intervalId = setInterval(() => { 
-                const s = document.querySelectorAll('.modal-slide'); 
-                if (s.length === 0) return;
-                s[slide].classList.remove('active'); 
-                slide = (slide+1)%s.length; 
-                s[slide].classList.add('active'); 
-            }, 3000);
             
-            // Simpan interval ID untuk dibersihkan saat modal ditutup
-            modal.dataset.intervalId = intervalId; 
         }));
 
         function closeModal() {
